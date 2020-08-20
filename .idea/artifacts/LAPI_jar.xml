@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LAPI:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/LAPI_jar</output-path>
+    <root id="archive" name="LAPI.jar">
+      <element id="module-output" name="LAPI" />
+      <element id="extracted-dir" path="$USER_HOME$/Minecraft/dependencies/spigot.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
