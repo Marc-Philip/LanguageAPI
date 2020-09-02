@@ -57,11 +57,11 @@ public class ItemBuilder {
 
 	public ItemBuilder addGlow() {
 
-		net.minecraft.server.v1_16_R2.ItemStack nmsStack = org.bukkit.craftbukkit.v1_16_R2.inventory.CraftItemStack.asNMSCopy(item);
-		net.minecraft.server.v1_16_R2.NBTTagCompound tag = null;
+		net.minecraft.server.v1_13_R2.ItemStack nmsStack = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asNMSCopy(item);
+		net.minecraft.server.v1_13_R2.NBTTagCompound tag = null;
 
 		if (!nmsStack.hasTag()) {
-			tag = new net.minecraft.server.v1_16_R2.NBTTagCompound();
+			tag = new net.minecraft.server.v1_13_R2.NBTTagCompound();
 			nmsStack.setTag(tag);
 
 		}
@@ -69,11 +69,11 @@ public class ItemBuilder {
 		if (tag == null)
 			tag = nmsStack.getTag();
 
-		net.minecraft.server.v1_16_R2.NBTTagList ench = new net.minecraft.server.v1_16_R2.NBTTagList();
+		net.minecraft.server.v1_13_R2.NBTTagList ench = new net.minecraft.server.v1_13_R2.NBTTagList();
 		tag.set("ench", ench);
 		nmsStack.setTag(tag);
 
-		item = org.bukkit.craftbukkit.v1_16_R2.inventory.CraftItemStack.asBukkitCopy(nmsStack);
+		item = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asBukkitCopy(nmsStack);
 
 		return this;
 	}
