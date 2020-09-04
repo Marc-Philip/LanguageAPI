@@ -21,7 +21,7 @@ import com.mojang.authlib.properties.Property;
 
 public class HeadBuilder {
 	public static ItemStack createSkull(String value, String name, String lore, int amount) {
-		ItemStack head = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
+		ItemStack head = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
 
 		if (value.isEmpty())
 			return head;

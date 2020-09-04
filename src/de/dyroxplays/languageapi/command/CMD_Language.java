@@ -27,7 +27,7 @@ public class CMD_Language implements CommandExecutor {
 	public static ItemStack english = HeadBuilder.createSkull(
 			"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGNhYzk3NzRkYTEyMTcyNDg1MzJjZTE0N2Y3ODMxZjY3YTEyZmRjY2ExY2YwY2I0YjM4NDhkZTZiYzk0YjQifX19",
 			"§bEnglish", null, 1);
-	private static ItemStack glass = new ItemBuilder(Material.LEGACY_STAINED_GLASS_PANE, 1, (short) 9).setName(" ").create();
+	private static ItemStack glass = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, (short) 9).setName(" ").create();
 
 	public CMD_Language() { 
 
@@ -70,11 +70,11 @@ public class CMD_Language implements CommandExecutor {
 				pinv.setItem(1, english);
 				if (LanguageAPI.getPlayerLanguage((Player) sender) == Language.german) {
 					ItemStack item = pinv.getItem(3).clone();
-					net.minecraft.server.v1_13_R2.ItemStack nmsStack = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asNMSCopy(item);
-					net.minecraft.server.v1_13_R2.NBTTagCompound tag = null;
+					net.minecraft.server.v1_8_R3.ItemStack nmsStack = org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack.asNMSCopy(item);
+					net.minecraft.server.v1_8_R3.NBTTagCompound tag = null;
 
 					if (!nmsStack.hasTag()) {
-						tag = new net.minecraft.server.v1_13_R2.NBTTagCompound();
+						tag = new net.minecraft.server.v1_8_R3.NBTTagCompound();
 						nmsStack.setTag(tag);
 
 					}
@@ -82,19 +82,19 @@ public class CMD_Language implements CommandExecutor {
 					if (tag == null)
 						tag = nmsStack.getTag();
 
-					net.minecraft.server.v1_13_R2.NBTTagList ench = new net.minecraft.server.v1_13_R2.NBTTagList();
+					net.minecraft.server.v1_8_R3.NBTTagList ench = new net.minecraft.server.v1_8_R3.NBTTagList();
 					tag.set("ench", ench);
 					nmsStack.setTag(tag);
 
-					item = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asBukkitCopy(nmsStack);
+					item = org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack.asBukkitCopy(nmsStack);
 					pinv.setItem(3, item);
 				} else if (LanguageAPI.getPlayerLanguage((Player) sender) == Language.english) {
 					ItemStack item = pinv.getItem(1).clone();
-					net.minecraft.server.v1_13_R2.ItemStack nmsStack = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asNMSCopy(item);
-					net.minecraft.server.v1_13_R2.NBTTagCompound tag = null;
+					net.minecraft.server.v1_8_R3.ItemStack nmsStack = org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack.asNMSCopy(item);
+					net.minecraft.server.v1_8_R3.NBTTagCompound tag = null;
 
 					if (!nmsStack.hasTag()) {
-						tag = new net.minecraft.server.v1_13_R2.NBTTagCompound();
+						tag = new net.minecraft.server.v1_8_R3.NBTTagCompound();
 						nmsStack.setTag(tag);
 
 					}
@@ -102,15 +102,15 @@ public class CMD_Language implements CommandExecutor {
 					if (tag == null)
 						tag = nmsStack.getTag();
 
-					net.minecraft.server.v1_13_R2.NBTTagList ench = new net.minecraft.server.v1_13_R2.NBTTagList();
+					net.minecraft.server.v1_8_R3.NBTTagList ench = new net.minecraft.server.v1_8_R3.NBTTagList();
 					tag.set("ench", ench);
 					nmsStack.setTag(tag);
 
-					item = org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asBukkitCopy(nmsStack);
+					item = org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack.asBukkitCopy(nmsStack);
 					pinv.setItem(1, item);
 				}
 				((Player) sender).openInventory(pinv);
-				((Player) sender).playSound(((Player) sender).getLocation(), Sound.ENTITY_ITEM_PICKUP, 1.0f, 1.0f);
+				((Player) sender).playSound(((Player) sender).getLocation(), Sound.ITEM_PICKUP, 1.0f, 1.0f);
 			}
 		}
 		return true;

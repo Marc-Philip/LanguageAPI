@@ -127,7 +127,7 @@ public class Manager {
 	}
 
 	public void registerPlayer(Player player) {
-		String language = (player.getLocale().startsWith("de_") ? Language.german.name() : Language.english.name());
+		String language = (player.spigot().getLocale().startsWith("de_") ? Language.german.name() : Language.english.name());
 		if (playerLanguage.containsKey(player.getUniqueId()))
 			playerLanguage.remove(player.getUniqueId());
 		if (!existUUID(player.getUniqueId().toString())) {
@@ -169,7 +169,7 @@ public class Manager {
 		if (playerLanguage.containsKey(p.getUniqueId()))
 			return playerLanguage.get(p.getUniqueId());
 		else
-			return (p.getLocale().startsWith("de_") ? Language.german : Language.english);
+			return (p.spigot().getLocale().startsWith("de_") ? Language.german : Language.english);
 	}
 
 	public void setLanguage(Player p, Language language) {
