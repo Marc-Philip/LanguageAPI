@@ -11,6 +11,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.dyroxplays.languageapi.command.CMD_Language;
@@ -19,6 +20,7 @@ import de.dyroxplays.languageapi.listener.Join;
 import de.dyroxplays.languageapi.manager.Language;
 import de.dyroxplays.languageapi.manager.Manager;
 import de.dyroxplays.languageapi.manager.MySQL;
+import de.marc.languageapi.PlaceholderAPI;
 
 public class LanguageAPI extends JavaPlugin {
 	public static String prefix = "§8┃ §bSystem §8× ";
@@ -35,6 +37,10 @@ public class LanguageAPI extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage(prefix + "§7was coded by Dyroxplays and Marc");
 		Bukkit.getConsoleSender().sendMessage(" ");
 		Bukkit.getConsoleSender().sendMessage(" ");
+		
+		if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            Bukkit.getConsoleSender().sendMessage(prefix + "Found PlaceholderAPI, Hooked: " + new PlaceholderAPI().register());
+        }
 	}
 
 	@Override
